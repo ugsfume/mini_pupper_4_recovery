@@ -128,11 +128,6 @@ robot's run logs:
 
 Median time to walking was 2.1 s after a fall, with current peaks up to 3.15 A.
 
-## Known limits
-
-- **Everything was developed on one robot.** The joint limits, calibration and IMU mounting are its own. See
-  [Adapting to another unit](docs/ROBOT.md#adapting-to-another-unit).
-
 ## What is where
 
 ```
