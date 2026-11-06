@@ -132,9 +132,6 @@ Median time to walking was 2.1 s after a fall, with current peaks up to 3.15 A.
 
 - **Everything was developed on one robot.** The joint limits, calibration and IMU mounting are its own. See
   [Adapting to another unit](docs/ROBOT.md#adapting-to-another-unit).
-- **The robot can go limp at the walker's first step.** The runner missed the firmware's 100 ms link deadline in 2 of 13
-  logged starts. The runner warms up first and keeps frames flowing, but this is untested on a robot. The tail of the first-step gaps
-  (91–109 ms) is unexplained, so the fix may not cover it.
 
 ## What is where
 
