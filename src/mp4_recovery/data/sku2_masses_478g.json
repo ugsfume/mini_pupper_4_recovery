@@ -1,0 +1,9 @@
+{
+ "total_kg": 0.47866,
+ "module_kg": 0.06682,
+ "leg_kg": 0.0065,
+ "front_pair_kg": 0.1973,
+ "rear_pair_kg": 0.2578,
+ "base_com_x_m": -0.02313,
+ "source": "478.66 g total with the Raspberry Pi 5 heatsink fitted: sku2_masses.json (450 g, no heatsink) with the heatsink's 28.66 g added to the base at the base's center of mass."
+}

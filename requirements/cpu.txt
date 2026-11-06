@@ -1,0 +1,8 @@
+# CPU mode: policy checks, the runner and the tests in tests/cpu.
+# Versions come from constraints.txt.
+
+numpy
+scipy
+pyserial
+torch
+pytest

@@ -1,0 +1,158 @@
+{
+ "about": "The Mini Pupper v4 SKU2's servo <-> policy contract: signs, stand and calibration.",
+ "servo_order": [
+  "FR abduction",
+  "FR hip",
+  "FR knee",
+  "FL abduction",
+  "FL hip",
+  "FL knee",
+  "RR abduction",
+  "RR hip",
+  "RR knee",
+  "RL abduction",
+  "RL hip",
+  "RL knee"
+ ],
+ "joint_order": [
+  "FR_hip",
+  "FR_thigh",
+  "FR_calf",
+  "FL_hip",
+  "FL_thigh",
+  "FL_calf",
+  "RR_hip",
+  "RR_thigh",
+  "RR_calf",
+  "RL_hip",
+  "RL_thigh",
+  "RL_calf"
+ ],
+ "policy_targets": [
+  "FR_hip",
+  "FR_thigh",
+  "FL_hip",
+  "FL_thigh",
+  "RR_hip",
+  "RR_thigh",
+  "RL_hip",
+  "RL_thigh",
+  "FR_knee_drive",
+  "FL_knee_drive",
+  "RR_knee_drive",
+  "RL_knee_drive"
+ ],
+ "signs": [
+  -1.0,
+  1.0,
+  -1.0,
+  -1.0,
+  1.0,
+  1.0,
+  -1.0,
+  1.0,
+  -1.0,
+  -1.0,
+  1.0,
+  1.0
+ ],
+ "stand_policy_rad": [
+  -0.0,
+  0.18360514665129954,
+  0.056627207580955824,
+  -0.0,
+  -0.18360514665129954,
+  0.056627207580955824,
+  -0.0,
+  0.18360514665129954,
+  0.056627207580955824,
+  -0.0,
+  -0.18360514665129954,
+  0.056627207580955824
+ ],
+ "stand_joint_rad": [
+  -0.0,
+  0.18360514665129954,
+  0.24023235423225536,
+  -0.0,
+  -0.18360514665129954,
+  -0.24023235423225536,
+  -0.0,
+  0.18360514665129954,
+  0.24023235423225536,
+  -0.0,
+  -0.18360514665129954,
+  -0.24023235423225536
+ ],
+ "tendon_coefs": {
+  "FR": {
+   "FR_thigh": -1.0,
+   "FR_calf": 1.0
+  },
+  "FL": {
+   "FL_thigh": 1.0,
+   "FL_calf": -1.0
+  },
+  "RR": {
+   "RR_thigh": -1.0,
+   "RR_calf": 1.0
+  },
+  "RL": {
+   "RL_thigh": 1.0,
+   "RL_calf": -1.0
+  }
+ },
+ "offsets_deg": [
+  -12.0,
+  8.0,
+  -16.0,
+  6.0,
+  -36.0,
+  -42.0,
+  -8.0,
+  25.0,
+  4.0,
+  17.0,
+  7.0,
+  19.0
+ ],
+ "stand_dd": [
+  1671,
+  1474,
+  1710,
+  1495,
+  1910,
+  1970,
+  1631,
+  1304,
+  1513,
+  1383,
+  1483,
+  1365
+ ],
+ "stand_ticks": [
+  472,
+  537,
+  459,
+  530,
+  393,
+  373,
+  485,
+  593,
+  524,
+  567,
+  534,
+  573
+ ],
+ "geometry": {
+  "th1n_deg": -55.5198,
+  "th2n_deg": 41.7555,
+  "target_hip_height_mm": 70.0,
+  "source": "the firmware IK's neutral pose (foot under the hip axis, 70 mm below, as measured on SKU2), solved in the model's own link geometry"
+ },
+ "sources": {
+  "src/mp4_recovery/robot/assets/sku_2/pupper.xml": "7bd8ecc99c261936d04a03d41d17868ad573250d34739d85c809836e467db9b4",
+  "src/mp4_recovery/robot/assets/sku_2/servo_map.json": "b426beaeb412a07f372d206b457d85a4d1dfdf0b1cd89f60a554fb1be26ee8d8"
+ },
+ "calibration": "mp4link offsets --json after a calibration"
+}

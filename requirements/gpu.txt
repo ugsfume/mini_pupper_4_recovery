@@ -1,0 +1,21 @@
+# GPU (CUDA) mode: training, evaluation and everything in cpu.txt.
+# Versions come from constraints.txt.
+
+mjlab
+mujoco
+mujoco-warp
+warp-lang
+rsl-rl-lib
+torch
+
+numpy
+scipy
+tensorboard
+pyserial
+
+# recording
+imageio
+imageio-ffmpeg
+pillow
+
+pytest

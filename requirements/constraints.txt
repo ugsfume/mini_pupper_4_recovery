@@ -1,0 +1,25 @@
+# Unified pin set for this repository. Applied with `uv pip install -c` in both modes.
+#
+# The shipped policies were trained and evaluated on this set (MuJoCo 3.7,
+# MuJoCo Warp 3.7.0.1, torch 2.14); the fitted servo models were identified on
+# the same MuJoCo line. Change these only together with a re-evaluation.
+
+# --- core physics / GPU sim --------------------------------------------------
+mujoco==3.7.0
+mujoco-warp==3.7.0.1
+warp-lang==1.12.1
+mjlab==1.3.0
+rsl-rl-lib==5.0.1
+tensordict==0.14.2
+
+# --- torch (index is chosen by --torch-backend in the install scripts) --------
+torch==2.14.0
+
+# --- numerics ----------------------------------------------------------------
+numpy==2.5.3
+scipy==1.18.1
+pyserial==3.5
+
+tensorboard==2.21.0
+
+protobuf==7.36.2
