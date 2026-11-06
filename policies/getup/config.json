@@ -1,0 +1,127 @@
+{
+ "task": {
+  "options": {
+   "noise_ramp": true,
+   "noisy": true,
+   "randomise": true,
+   "chain_ms": [
+    8.0,
+    19.0
+   ],
+   "action_scale": [
+    1.57,
+    3.141592653589793,
+    3.141592653589793,
+    1.57,
+    3.141592653589793,
+    3.141592653589793,
+    1.57,
+    3.141592653589793,
+    3.141592653589793,
+    1.57,
+    3.141592653589793,
+    3.141592653589793
+   ],
+   "episode_s": 8.0,
+   "fixed_command": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "terrain": "flat",
+   "rows": 1,
+   "tile": 1.6,
+   "terrain_seed": 0,
+   "max_init_level": 0,
+   "band_deg": [
+    90.0,
+    180.0,
+    180.0,
+    90.0,
+    180.0,
+    180.0,
+    90.0,
+    180.0,
+    180.0,
+    90.0,
+    180.0,
+    180.0
+   ],
+   "history": 0,
+   "masses_json": "sku2_masses_478g.json",
+   "self_collision": true,
+   "friction_range": [
+    0.5,
+    1.3
+   ],
+   "foot_solref": [
+    0.01,
+    1.0
+   ],
+   "push_mps": 0.0,
+   "level": null,
+   "stair_layout": null,
+   "stair_width": null,
+   "stair_landing": null,
+   "tilt_limit": 0.7,
+   "limits": true,
+   "stand_offset_abd_deg": 0.0,
+   "curriculum_iters": 1000,
+   "getup_collisions": true,
+   "thigh_base": true,
+   "thigh_short_m": 0.008,
+   "success_gyro": null,
+   "track_tilt_deg": 30.0,
+   "contact_solref": [
+    0.005,
+    1.0
+   ],
+   "spawn_z": [
+    0.06,
+    0.1
+   ],
+   "start_joints": "random",
+   "njmax": 1000,
+   "nconmax": 128,
+   "kind": "getup",
+   "mix_start": [
+    0.08000000000000002,
+    0.08000000000000002,
+    0.24,
+    0.16000000000000003,
+    0.16000000000000003,
+    0.08000000000000002,
+    0.2
+   ],
+   "mix_end": [
+    0.08000000000000002,
+    0.08000000000000002,
+    0.24,
+    0.16000000000000003,
+    0.16000000000000003,
+    0.08000000000000002,
+    0.2
+   ],
+   "midfall": 0.2,
+   "end_on_success": true,
+   "blowup_guard": true,
+   "nonfinite_guard": true,
+   "phase_s": 4.0,
+   "action_rate_weight": -0.1,
+   "action_rate_tilted_scale": 1.0,
+   "joint_vel_weight": -0.0005,
+   "filter_alpha": 0.75,
+   "filter_alpha_start": 0.75,
+   "filter_ramp_iters": 0
+  },
+  "servo_model": "md01",
+  "latency_steps": [
+   1,
+   5,
+   1
+  ],
+  "decimation": 20,
+  "physics_dt": 0.001
+ },
+ "noise": "measured"
+}

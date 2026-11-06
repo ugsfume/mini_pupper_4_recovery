@@ -1,0 +1,97 @@
+{
+ "comment": "One scripted sequence per case, played through the runner (numpy, the fake board) and eval/sequence.py (torch, the GPU): no one process has both. tilts: [from step, complementary tilt deg] counted in 20 ms steps from the GETUP entry; restarts: the steps from the entry at which each restarts its phase. differs_because: why the sim's steps are not the runner's. Both implementations are pinned here; a change to either fails its suite.",
+ "cases": {
+  "shared": {
+   "phase_s": 1.0,
+   "restart_s": 0.5,
+   "steps": 350,
+   "tilts": [
+    [
+     0,
+     90.0
+    ],
+    [
+     120,
+     40.0
+    ],
+    [
+     181,
+     90.0
+    ],
+    [
+     256,
+     45.0
+    ],
+    [
+     257,
+     46.0
+    ],
+    [
+     270,
+     20.0
+    ]
+   ],
+   "restarts": {
+    "runner": [
+     75,
+     181,
+     257
+    ],
+    "sim": [
+     75,
+     181,
+     257
+    ]
+   }
+  },
+  "the_robot_run_commands": {
+   "phase_s": 4.0,
+   "restart_s": 1.0,
+   "steps": 320,
+   "tilts": [
+    [
+     0,
+     90.0
+    ],
+    [
+     300,
+     20.0
+    ]
+   ],
+   "restarts": {
+    "runner": [
+     250
+    ],
+    "sim": [
+     250
+    ]
+   }
+  },
+  "float32_rounding": {
+   "phase_s": 1.0,
+   "restart_s": 0.2,
+   "steps": 200,
+   "tilts": [
+    [
+     0,
+     90.0
+    ],
+    [
+     150,
+     20.0
+    ]
+   ],
+   "restarts": {
+    "runner": [
+     60,
+     120
+    ],
+    "sim": [
+     61,
+     122
+    ]
+   },
+   "differs_because": "sequence compares in float32, where 60 x 0.02 < 1.2 and the 1e-9 tolerance rounds away: one step late, per restart. The runner compares in double."
+  }
+ }
+}
