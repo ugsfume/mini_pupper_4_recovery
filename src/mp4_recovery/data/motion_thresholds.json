@@ -1,0 +1,54 @@
+{
+ "about": "Upper limits on a get-up's motion quality and impact per start, for eval/thresholds.py. rev5: target reversals per joint per second, counting only reversals of at least 5 deg each side (eval/motion_meter.py); pow3: share of the leg joints' velocity power at 3 Hz or above; speed_rms: rms leg joint speed, rad/s. These three are the robots' mean in the get-up window. base_force_peak_N and abd_limit_peak_Nm: p99 over robots of each robot's peak over the trial.",
+ "starts": {
+  "left": {
+   "rev5": 2.178215576484641,
+   "pow3": 0.37457311478603356,
+   "speed_rms": 4.851472688208655,
+   "base_force_peak_N": 151.51091262817383,
+   "abd_limit_peak_Nm": 0.9617856502532947
+  },
+  "right": {
+   "rev5": 2.8034292556746916,
+   "pow3": 0.5203980813205107,
+   "speed_rms": 5.176545791691363,
+   "base_force_peak_N": 149.28636566162103,
+   "abd_limit_peak_Nm": 0.6366077828407287
+  },
+  "nose": {
+   "rev5": 3.065139803082849,
+   "pow3": 0.48806697192650067,
+   "speed_rms": 5.297228735429534,
+   "base_force_peak_N": 279.3484405517578,
+   "abd_limit_peak_Nm": 0.6935600030422208
+  },
+  "back": {
+   "rev5": 2.4867627414670608,
+   "pow3": 0.4192676755709035,
+   "speed_rms": 5.071455750183932,
+   "base_force_peak_N": 225.28912445068357,
+   "abd_limit_peak_Nm": 0.8538327133655547
+  },
+  "midfall": {
+   "rev5": 2.1381133162115558,
+   "pow3": 0.43172794809601917,
+   "speed_rms": 4.680993292363219,
+   "base_force_peak_N": 282.7959375,
+   "abd_limit_peak_Nm": 0.824644328355788
+  },
+  "crouch": {
+   "rev5": 1.739716928716891,
+   "pow3": 0.41648280357284373,
+   "speed_rms": 4.6754843309208765,
+   "base_force_peak_N": 155.52442382812498,
+   "abd_limit_peak_Nm": 0.6174976623058314
+  },
+  "random": {
+   "rev5": 2.344941472959381,
+   "pow3": 0.4199710090676569,
+   "speed_rms": 4.948574591638903,
+   "base_force_peak_N": 253.42005798339832,
+   "abd_limit_peak_Nm": 0.837569375038146
+  }
+ }
+}
