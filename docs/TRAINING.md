@@ -104,6 +104,16 @@ spatial   mean |mu(o) - mu(o + eps)|^2      eps ~ N(0, 0.05^2), in the normalise
 The filter alone keeps success but misses the motion limits. The weights rise in two stages because they are easy to overdo: 5 and 100 freeze
 the policy (back 0 %, left 4 % after 150 iterations), since this calibration leaves little room inside the track ends. The recipe uses 1 and 20, then 2 and 40.
 
+### Why these steps
+
+Training directly inside the joint limits never learns to flip from the back, so the first step widens them. A target
+filter added to a trained policy breaks it, so the policy trains under the filter. Together, the filter and the
+smoothness loss remove fast target reversals in the air:
+
+<p align="center">
+  <img src="media/hip_target.png" width="640" alt="A hip target from the back start, before and after the smoothing steps">
+</p>
+
 ## The searched motions
 
 `data/searched_motions/` holds six open-loop get-ups, each a sequence of key postures with hold times, found by the cross-entropy method.

@@ -272,6 +272,27 @@ lifted playback, `floor LOG_PREFIX --policy DIR` for a get-up from the floor. It
 
 ## Adapting to another unit
 
+The policies and the decoder's bounds rest on the joint limits measured on one robot, in
+`src/mp4_recovery/data/sku2_joint_limits.json`. The hip's track ends depend on how each joint is mounted, so measure them
+on your unit; the abduction and knee limits come mostly from the robot's geometry.
+
+| Leg | Abduction, by hand (°) | Abduction, powered (°) | Knee relative to thigh (°) | Hip, track ends (°) |
+|---|---|---|---|---|
+| Front right | -22 to +23 | -24 to +24 | -84 to +38 | -147 to +163 |
+| Front left | -17 to +26 | -14 to +27 | -85 to +40 | -119 to +191 |
+| Rear right | -14 to +24 | -18 to +27 | -83 to +36 | -130 to +180 |
+| Rear left | -17 to +28 | -19 to +30 | -75 to +38 | -162 to +148 |
+
+Angles are from the stand pose; outward, knee folding and hip forward are positive. Near either abduction extreme the chassis
+also stops the thigh swinging towards the body's middle. This is one leg's reachable region:
+
+<p align="center">
+  <img src="media/joint_limits.png" width="560" alt="The measured reachable region of the front-right leg">
+</p>
+
+For a view you can rotate, with all four legs, download [joint_limits_3d.html](joint_limits_3d.html) (4.8 MB; it works
+offline) and open it in a browser: GitHub shows it as source.
+
 The contract holds one robot's calibration, and a policy's bounds are measured from that robot's stand. The runner refuses bounds
 made for another stand.
 

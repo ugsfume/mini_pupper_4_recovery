@@ -43,13 +43,7 @@ Dashed arrows are shortcuts: `START=checkpoints/clone.pt sh scripts/recipes/getu
 `START=checkpoints/wide_1499.pt` at the real limits, and `START=checkpoints/smooth3_3947.pt` at the last 600 iterations of the
 smoothness loss.
 
-Training directly inside the joint limits never learns to flip from the back, so the first step widens them. A target
-filter added to a trained policy breaks it, so the policy trains under the filter. Together, the filter and the
-smoothness loss remove fast target reversals in the air:
-
-<p align="center">
-  <img src="docs/media/hip_target.png" width="640" alt="A hip target from the back start, before and after the smoothing steps">
-</p>
+[docs/TRAINING.md](docs/TRAINING.md) explains why the recipe has these steps.
 
 ## On the robot
 
