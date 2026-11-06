@@ -295,7 +295,7 @@ CROSS = json.loads((REPO / "tests" / "data" / "phase_restart_cross.json").read_t
 @pytest.mark.parametrize("name", sorted(CROSS))
 def test_phase_restart_steps_against_the_runners(tmp_path, monkeypatch, name):
     """--getup-phase-restart: the real loop with only the filter's tilt scripted, from the GETUP entry, against
-    tests/data/phase_restart_cross.json, which tests/robot/test_restart_cross.py holds the runner's real loop to (no
+    tests/data/phase_restart_cross.json, which holds the runner's real loop to (no
     one environment has both). Where the two are recorded as different, the case says why."""
     case = CROSS[name]
     entry = 50                                                          # --force-getup-t 1.0

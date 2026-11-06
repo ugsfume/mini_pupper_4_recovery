@@ -172,4 +172,6 @@ MUJOCO_GL=egl python -m mp4_recovery.eval.getup_eval --policy runs/exports/mine 
 `thresholds` requires 90 % success from left, right and nose, 85 % from back, mid-fall and random, a median time to a held stand of at most 5 s,
 and limits on target reversals, velocity power, leg speed and impact from `src/mp4_recovery/data/motion_thresholds.json`. It exits 0 on a pass.
 
+`policies/getup` and `policies/getup_sim` each exceed a reversal limit slightly (back and left start respectively), so `thresholds` exits 1 on them. An export from the widened-limits step also fails `runner check`, as its targets reach past the real limits: it's only a training state.
+
 The walker's own checks are `eval.push_eval`, `eval.omni_eval` and `eval.terrain_eval`; each one's docstring has its commands.

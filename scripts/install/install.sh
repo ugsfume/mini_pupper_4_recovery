@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 # Create the mp4-recovery Python virtual environment (Linux / macOS).
 #
-#   gpu mode - mjlab / MuJoCo Warp parallel training, ONNX export, and the CPU
-#              MuJoCo + Gymnasium path. Needs an NVIDIA GPU; torch comes from
-#              the cu130 wheel index.
-#   cpu mode - the CPU simulator, servo models and ONNX export/runtime.
-#              No CUDA, no mjlab. Only mode on macOS.
+#   gpu mode - training and evaluation on an NVIDIA GPU, plus everything in cpu mode.
+#   cpu mode - policy checks, the runner on a simulated board and the tests in tests/cpu.
 #
 # Usage:
 #   bash scripts/install/install.sh [--mode auto|gpu|cpu] [--venv .venv]
@@ -35,7 +32,7 @@ done
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 REQ_DIR="$ROOT/requirements"
-VENV_PATH="$ROOT/$VENV_DIR"
+case "$VENV_DIR" in /*) VENV_PATH="$VENV_DIR" ;; *) VENV_PATH="$ROOT/$VENV_DIR" ;; esac
 PY="$VENV_PATH/bin/python"
 
 command -v uv >/dev/null 2>&1 || {

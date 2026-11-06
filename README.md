@@ -77,7 +77,7 @@ current guard**. The temperature cut-out stays on. Watch the abduction gears. Th
 
 ```bash
 git clone <this repository> && cd mini_pupper_4_recovery
-bash scripts/install/install.sh                       # 25-45 min, about 6.5 GB; see docs/INSTALL.md
+bash scripts/install/install.sh                       # 15-45 min, about 6.5 GB; see docs/INSTALL.md
 # Evaluation and training need an NVIDIA GPU; without one the installer picks CPU mode.
 .venv/bin/python -m pytest tests/cpu                  # about 5 min, no GPU needed
 
@@ -163,6 +163,6 @@ src/mp4_recovery/
   export_policy.py checkpoint to policy
   robot/, actuators/  the robot model and the fitted servo model
 tools/             deploy, stop, stream playback, contract for another unit, run summaries, robot-versus-simulation
-tests/             cpu/ needs no GPU, gpu/ about 15 min
+tests/             cpu/ needs no GPU, gpu/ 5-15 min
 docs/              INSTALL, TRAINING, ROBOT, POLICY_CONTRACT
 ```

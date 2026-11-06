@@ -103,6 +103,9 @@ class Disarm(Exception):
     """An immediate stop: limp now."""
 
 
+LATE_STEPS_STOP = 2                                # consecutive late policy steps that stop a run
+
+
 class FallDetected(Exception):
     """A fall during the stand ramp or hold: the policy loop starts in the get-up."""
 
@@ -505,7 +508,7 @@ class Runner:
                     self.keep_fed()
             late = (int(st.tick) - next_tick) & 0xFFFFFFFF
             late_run = late_run + 1 if late > 0 else 0
-            if late_run >= 2:
+            if late_run >= LATE_STEPS_STOP:
                 raise StopRun("two late steps in a row")
             next_tick = int(st.tick) + TICKS_PER_STEP
             tcf, gn = self.tilt_cf, self.gyro_norm
