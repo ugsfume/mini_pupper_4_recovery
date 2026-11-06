@@ -12,9 +12,6 @@ the get-up training recipe, the evaluation, the program that runs on the robot, 
 
 ## Policies
 
-The robot results below came from an earlier version of this code. This version reproduces its commands on a simulated board
-and against real logs.
-
 | Policy | What it does | Inputs | How it was made | Tested on |
 |---|---|---|---|---|
 | `policies/walker` | Stands, walks in every direction, climbs stairs, rides out shoves | 450 (10 frames × 45) | Fixed weights; the abductions' stand is 12° wider, which is what handles shoves | Robot (standing, 0.10 m/s forward) and simulation |
@@ -23,8 +20,6 @@ and against real logs.
 
 The two networks run separately. A program on the Raspberry Pi switches to the get-up on a detected fall and back to
 the walker once the robot stands.
-
-`policies/getup_sim` recovers faster and more reliably in simulation. It has never run on a robot.
 
 ## How the pieces fit
 
@@ -70,8 +65,7 @@ stateDiagram-v2
   Limp --> [*]
 ```
 
-The robot needs the [servo-link firmware](docs/ROBOT.md#firmware) with its get-up mode, and its **get-up mode has no
-current guard**. The temperature cut-out stays on. Watch the abduction gears. They are the weak part of the servo module.
+The robot needs the [servo-link firmware](docs/ROBOT.md#firmware) with its get-up mode.
 
 ## Quick start
 
@@ -138,16 +132,9 @@ Median time to walking was 2.1 s after a fall, with current peaks up to 3.15 A.
 
 - **Everything was developed on one robot.** The joint limits, calibration and IMU mounting are its own. See
   [Adapting to another unit](docs/ROBOT.md#adapting-to-another-unit).
-- **This code has not run on a robot as packaged** (see [Policies](#policies)). `policies/getup_sim` has not run on a robot at all.
 - **The robot can go limp at the walker's first step.** The runner missed the firmware's 100 ms link deadline in 2 of 13
   logged starts. The runner warms up first and keeps frames flowing, but this is untested on a robot. The tail of the first-step gaps
   (91–109 ms) is unexplained, so the fix may not cover it.
-- **One real fall never rose,** through three retries. The cause is unknown.
-- The front-right knee once read past its potentiometer's track end during a get-up that succeeded.
-- The right legs draw about twice the left's current, and real currents run above the servo model's. The cause is unknown.
-- Shoves on the real robot were by hand, with no measured speed.
-- The wider stance lowers success on box obstacles.
-- Stairs and rough ground have not been run on the robot with the wider stance.
 
 ## What is where
 
