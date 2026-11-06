@@ -19,7 +19,7 @@ The shipped contract and policies belong to one calibrated robot. On any other u
 
 ## Firmware
 
-Flash the `mini-pupper-4-getup` branch of FIRMWARE_URL onto the ESP32-S3, with ESP-IDF 5.5:
+Flash the `mini-pupper-4-getup` branch of [the firmware repository](https://github.com/ugsfume/mini_pupper_4_recovery_firmware) onto the ESP32-S3, with ESP-IDF 5.5:
 
 ```sh
 idf.py build

@@ -124,8 +124,8 @@ happening; walking again is measured in the sequence, where kicks keep landing d
 | Four 25 mm stairs / eight 25 mm stairs | 98.8 / 95.7 % reach the top |
 | Rough ground, eight kinds, 256 trials | 96.5 % (box obstacles 87.9 %, raised relief 86.7 %) |
 
-**One real robot, by hand** with `policies/getup` and `policies/walker`. The logs are attached to the repository's release, and
-`tools/summarise_runs.py` regenerates this table from them:
+**One real robot, by hand** with `policies/getup` and `policies/walker`. `tools/summarise_runs.py` makes this table from a
+robot's run logs:
 
 | | Get-ups | Up first time | Retried | Run ended first | Never rose |
 |---|---|---|---|---|---|
